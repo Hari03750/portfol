@@ -1,0 +1,158 @@
+:root {
+  --dark-bg: #0c0824;
+  --dark-text: #ffffff;
+  --dark-accent: #8f00ff;
+
+  --light-bg: #ffffff;
+  --light-text: #111111;
+  --light-accent: #6200ee;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  transition: all 0.4s ease;
+}
+
+body.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.light .highlight {
+  color: var(--light-accent);
+}
+
+.highlight {
+  color: var(--dark-accent);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: inherit;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: inherit;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+nav .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+nav .slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+nav .slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+nav input:checked + .slider {
+  background-color: #6200ee;
+}
+
+nav input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 8px 0;
+}
+
+.centered {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--dark-accent);
+  box-shadow: 0 0 15px var(--dark-accent);
+}
+
+body.light .profile {
+  border-color: var(--light-accent);
+  box-shadow: 0 0 15px var(--light-accent);
+}
+
+.btn {
+  background: var(--dark-accent);
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+body.light .btn {
+  background: var(--light-accent);
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.back-to-top {
+  display: block;
+  margin-top: 10px;
+  color: var(--dark-accent);
+}
+
+body.light .back-to-top {
+  color: var(--light-accent);
+}
